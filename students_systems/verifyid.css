@@ -1,0 +1,171 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden; /* Prevents scrollbars on the main layout */
+}
+
+/* --- Left Side: Green Sidebar --- */
+.sidebar {
+    background-color: #003300; /* CPSU Dark Green */
+    width: 40%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.logo {
+    width: 130px;
+    margin-bottom: 25px;
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.sidebar p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.yellow-badge {
+    background-color: #FFCC00; /* CPSU Gold */
+    color: #003300;
+    padding: 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-top: 40px;
+    max-width: 320px;
+    line-height: 1.5;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* --- Right Side: Yellow Background --- */
+.main-content {
+    background-color: #FFCC00; /* CPSU Gold */
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- The Verification Card --- */
+.login-card {
+    background-color: white;
+    padding: 60px 45px;
+    border-radius: 35px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.login-card h2 {
+    color: #003300;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.login-card p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+/* --- Form Input & Buttons --- */
+input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+    caret-color: black;
+}
+
+input[type="text"]:focus {
+    border-color: #116913;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.btn-login {
+    background-color: #003300;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #004d00;
+    transform: translateY(-2px);
+}
+
+/* --- Error Message --- */
+.error-msg {
+    background-color: #ffeaea;
+    color: #d93025;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 5px solid #d93025;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+/* --- Bottom Link (Log In) --- */
+.btn-create {
+    display: block;
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #f8f8f8;
+    color: #333;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-create:hover {
+    background-color: #eee;
+}
+
+/* --- Responsive Layout for Mobile --- */
+@media (max-width: 850px) {
+    body {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    .sidebar, .main-content {
+        width: 100%;
+        height: auto;
+        padding: 50px 20px;
+    }
+}

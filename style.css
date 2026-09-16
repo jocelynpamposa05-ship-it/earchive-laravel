@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #004d00;
+    color: white;
+}
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+.welcome-logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+.login-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #FFD700;
+    color: #004d00;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .welcome-logo { width: 100px; }
+    h1 { font-size: 1.5rem; }
+    .welcome-container { padding: 20px; }
+}

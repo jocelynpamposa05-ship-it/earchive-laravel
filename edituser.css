@@ -1,0 +1,47 @@
+/* Wrapper for custom select arrow */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Styling the select element to look professional */
+.form-group select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: 48px;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    padding-right: 45px; /* Space for arrow */
+}
+
+.form-group select:hover {
+    background-color: #ffffff; /* Darker green on hover */
+}
+
+/* Style for the dropdown options */
+.form-group select option {
+ background-color: #ddddddc4;
+    color: #333;
+}
+
+/* Custom dropdown arrow */
+.select-wrapper::after {
+    content: '\f0d7'; /* Font Awesome caret-down */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #116913; /* Gold to match text */
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}

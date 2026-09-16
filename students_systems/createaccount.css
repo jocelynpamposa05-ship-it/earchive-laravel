@@ -1,0 +1,243 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/cpsu_pic.jpg);
+    background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Hide the original sidebar panel to adopt the single-card layout */
+.sidebar {
+    display: none;
+}
+
+/* Make the main content area a full-width transparent container */
+.main-content {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registration-card {
+    background: #0000006b;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.registration-card h2 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.registration-card p {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.error-msg {
+    color: red;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* =================================== */
+/*           FORM STYLES               */
+/* =================================== */
+
+/* --- Form Groups & Labels --- */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+/* --- Wrappers for Icons --- */
+.password-wrapper,
+.select-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+/* --- Password Requirements Text --- */
+.password-requirements {
+    color: #ffffff;
+    font-size: 0.8rem;
+    text-align: left;
+    margin-top: 5px;
+}
+
+/* --- Unified Inputs --- */
+.input-group select,
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    outline: none;
+    background: #ffffff;
+    color: #000;
+    font-size: 14px;
+    height: auto;
+    line-height: normal;
+    box-shadow: none;
+}
+.input-group select,
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"] {
+    transition: 0.3s;
+    caret-color: black;
+}
+
+.input-group select:focus,
+.input-group input[type="text"]:focus,
+.input-group input[type="email"]:focus,
+.input-group input[type="password"]:focus {
+    border-color: #116913;
+}
+
+/* Error Styles */
+.input-group input.error {
+    border: 2px solid #dc3545 !important; /* Red highlight */
+    background-color: #fff8f8; /* Subtle red tint */
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.6s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.hint.error-text {
+    color: #dc3545 !important; /* Red text */
+    font-weight: bold;
+}
+
+/* --- Submit Button --- */
+.btn-submit {
+    background: #116913;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: normal;
+    transition: 0.3s;
+    font-size: 1rem;
+    margin-top: 10px;
+    height: auto;
+    box-shadow: none;
+}
+
+.btn-submit:hover {
+    background: #034704;
+    transform: translateY(-2px);
+}
+
+/* Dropdown option color */
+.input-group select option {
+    background: white;
+    color: #333;
+}
+
+/* Hint Text Default */
+.hint {
+    font-size: 0.75rem;
+    color: #ddd;
+    display: block;
+    margin-top: 5px;
+}
+
+/* --- Icons inside Inputs --- */
+
+/* Specific padding for elements with icons */
+.password-wrapper input#password {
+    padding-right: 35px;
+}
+
+/* Password eye icon */
+.password-wrapper i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    cursor: pointer;
+    color: #000;
+}
+
+/* Custom Arrow for Select */
+.select-wrapper::after {
+    display: none;
+}
+
+/* --- Login Link --- */
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+}
+
+.login-link p {
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.login-link a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #116913;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: normal;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.login-link a:hover {
+    background: #034704;
+}
+
+/* =================================== */
+/*           RESPONSIVE                */
+/* =================================== */
+@media (max-width: 900px) {
+    body { flex-direction: column; }
+    .sidebar, .main-content { width: 100%; height: auto; padding: 40px 20px; }
+}

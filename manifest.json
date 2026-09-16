@@ -1,0 +1,21 @@
+{
+  "name": "CPSU Admin Panel",
+  "id": "cpsu-admin-panel-v1",
+  "short_name": "Admin Panel",
+  "start_url": "loginadmin.php",
+  "display": "standalone",
+  "background_color": "#004d00",
+  "theme_color": "#004d00",
+  "icons": [
+    {
+      "src": "img/cpsu_logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/cpsu_logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+/* Import Shared Dashboard Styles */
+@import url('../student_dashboard.css');
+
+/*
+    Custom styles for the student dashboard page,
+    specifically for the "Quick Access" college cards.
+*/
+
+body, .content {
+    background-color: #edeff2 ; /* Light gray background for the dashboard */
+}
+
+.header-text {
+    text-align: normal;
+}
+
+.welcome-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.welcome-header .user-profile {
+    font-size: 1.5em; /* Match h2 size */
+    color: var(--dark-green); /* Match h2 color */
+}
+
+.college-card.agri {
+    border-top: 5px solid #86c706; /* Green */
+    border-right: none;
+}
+
+.college-card.cs {
+    border-top: 5px solid #473b94; /* Violet */
+    border-right: none;
+}
+
+.college-card.hm {
+    border-top: 5px solid #ff598e; /* Pink */
+    border-right: none;
+}
+
+.college-card.educ {
+    border-top: 5px solid #0056b3; /* Blue */
+    border-right: none;
+}
+
+.college-card {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s;
+    color: #003300;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.college-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* Quick Access Grid Layout (4 Columns) */
+.quick-access-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* --- NEW: Highlight of the Week --- */
+.highlight-section {
+    margin-top: 40px;
+}
+
+.highlight-section h3 {
+    color: #003300 ;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.highlight-section h3 .fa-star {
+    color: #003300 ;
+}
+
+.highlight-card {
+    background: linear-gradient(135deg, var(--dark-green), #006400);
+    color: white;
+    border-radius: 15px;
+    padding: 30px;
+    border: none;
+    border-top: 5px solid var(--gold);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.highlight-card h4 a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.highlight-card .author {
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.highlight-card .abstract {
+    line-height: 1.6;
+    color: rgba(255,255,255,0.9);
+}
+
+.highlight-card .card-footer {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.highlight-card .read-more-btn {
+    background: var(--gold);
+    color: var(--dark-green);
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.highlight-card .read-more-btn:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+
+/* --- NEW: New Uploads --- */
+.new-uploads-section {
+    margin-top: 40px;
+}
+
+.new-uploads-section h3 {
+    color: #003300 ;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.new-uploads-section h3 .fa-file-arrow-up {
+    color: #003300;
+}
+
+.new-uploads-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.research-card {
+    background: #f9f9f9;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+.research-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--dark-green);
+    margin-bottom: 10px;
+}
+
+.dept-logo {
+    width: 25px;
+}
+
+.card-body h4 { font-size: 0.9rem; margin-bottom: 5px; color: #333; }
+.card-body .author { font-size: 0.9rem; color: #666; margin-bottom: 15px; }
+
+.card-title-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-subject {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.card-footer {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pdf-link { color: #116913; font-size: 1.2rem; text-decoration: none; }
+.views { font-size: 0.9rem; color: #666; display: flex; align-items: center; gap: 5px; }
+
+/* Department-specific border colors for research cards */
+.research-card.agri {
+    border: none;
+    border-top: 5px solid #228B22;
+}
+.research-card.cs {
+    border: none;
+    border-top: 5px solid #b61db6;
+}
+.research-card.hm {
+    border: none;
+    border-top: 5px solid #fc46c5;
+}
+.research-card.educ {
+    border: none;
+    border-top: 5px solid #0056b3;
+}
+
+/* Responsive for new uploads grid */
+@media (max-width: 1200px) {
+    .quick-access-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .new-uploads-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .quick-access-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .new-uploads-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .quick-access-grid {
+        grid-template-columns: 1fr;
+    }
+    .new-uploads-grid {
+        grid-template-columns: 1fr;
+    }
+}

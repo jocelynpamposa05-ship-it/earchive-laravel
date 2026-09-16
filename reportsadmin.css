@@ -1,0 +1,182 @@
+:root {
+    --dark-green: #116913;
+    --darker-green: #0d550f;
+    --gold: #ebe80f;
+    --light-bg: #f1f3f6;
+}
+
+/* --- LAYOUT CONTROLS --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body { display: flex; flex-direction: column; }
+
+/* --- HEADER FIX --- */
+.header {
+    background-color: var(--dark-green);
+    color: white;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    border-bottom: 5px solid var(--gold);
+    flex-shrink: 0;
+}
+
+.logo-section { display: flex; align-items: center; gap: 15px; }
+.logo-section img { height: 50px; width: auto; }
+
+.header-text h1, .title-text h1 { font-size: 1.1rem; margin: 0; text-transform: uppercase; font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: 0.05em; }
+.header-text p, .title-text p { font-size: 0.8rem; font-weight: bold; }
+
+.admin-profile { font-weight: bold; display: flex; align-items: center; gap: 10px; }
+
+/* --- MAIN WRAPPER --- */
+.main-layout {
+    display: flex;
+    flex: 1;
+    background-color: var(--darker-green);
+    overflow: hidden;
+}
+
+/* --- SIDEBAR PILL DESIGN --- */
+.sidebar { width: 240px; padding-top: 30px; flex-shrink: 0; }
+.sidebar ul { list-style: none; }
+.sidebar li { margin: 8px 15px; }
+
+.sidebar li a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.sidebar li.active {
+    background-color: var(--gold);
+    border-radius: 10px;
+}
+
+.sidebar li.active a { color: var(--darker-green); font-weight: 800; }
+
+/* --- THE CURVED DASHBOARD PANEL --- */
+.content {
+    flex: 1;
+    background-color: var(--light-bg);
+    border-top-left-radius: 0px; 
+    border-left: 10px solid var(--gold); /* Gold vertical bar */
+    padding: 30px;
+    overflow-y: auto;
+    box-shadow: inset 5px 0 15px rgba(0,0,0,0.05);
+}
+
+.reports-container h2 { color: var(--dark-green); margin-bottom: 25px; font-weight: 800; }
+
+/* --- CARDS & BOXES --- */
+.stats-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
+    margin-bottom: 30px; 
+}
+
+.stat-card {
+    background: var(--dark-green);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid var(--darker-green);
+    border-top: 5px solid var(--gold);
+    border-right: 5px solid var(--gold);
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    color: white;
+    transition: box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card h3 { color: white; }
+
+.card-icon { 
+    font-size: 1.8rem; color: var(--gold); margin-bottom: 10px;
+}
+.stat-number { font-size: 2.2rem; font-weight: 800; color: white; }
+
+.charts-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 25px; }
+.chart-box { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 20px; 
+    border: 2px solid var(--dark-green);
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+}
+.chart-box h3 { color: var(--dark-green); }
+.chart-box:hover {
+    box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.canvas-container { height: 350px; position: relative; }
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+    html, body {
+        height: auto;
+        overflow-y: auto;
+    }
+    .main-layout {
+        flex-direction: column;
+        overflow: visible;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 10px 0;
+        height: auto;
+        background-color: var(--darker-green);
+    }
+    .sidebar nav {
+        overflow-x: auto;
+        padding: 0 10px;
+    }
+    .sidebar ul {
+        display: flex;
+        gap: 10px;
+        padding-bottom: 5px;
+    }
+    .sidebar li { margin: 0; flex-shrink: 0; }
+    .sidebar li a {
+        flex-direction: column;
+        font-size: 0.7rem;
+        text-align: center;
+        padding: 8px 10px;
+        gap: 5px;
+    }
+    .content {
+        border-left: none;
+        border-top: 5px solid var(--gold);
+        border-radius: 20px 20px 0 0;
+        padding: 20px 15px;
+        overflow: visible;
+    }
+    .header {
+        height: auto; padding: 10px 15px; flex-direction: column; gap: 10px; text-align: center;
+    }
+    .logo-section { flex-direction: column; gap: 5px; }
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+}

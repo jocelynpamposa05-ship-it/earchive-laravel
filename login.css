@@ -1,0 +1,74 @@
+body {
+  background-image: url(img/cpsu_pic.jpg);
+  background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-card {
+    background: #0000006b;
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+.login-card img { width: 80px; margin-bottom: 0px; margin-top: 0px; }
+.login-card h2,h5 { color: #ffffff; margin-bottom: 15px; margin-top: 0px; }
+.form-group { margin-bottom: 15px; text-align: left; }
+.form-group label { display: block; font-size: 15px; color: #ffffff; margin-bottom: 5px; }
+.form-group input {
+    width: 100%; padding: 10px; border: 1px solid #000000; border-radius: 5px; box-sizing: border-box;
+    transition: all 0.3s ease;
+    
+}
+
+/* Caret and glow effect on focus */
+.form-group input:focus {
+    border-color: #116913;
+}
+.invalid-input {
+    border: 2px solid #e63946 !important;
+    box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.25);
+    background: #fff1f1;
+    outline: none !important;
+}
+.invalid-input.invalid-shake {
+    animation: validateShake 0.35s ease-in-out;
+}
+.invalid-message {
+    color: #e63946;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 6px;
+    display: block;
+}
+@keyframes validateShake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+.btn {
+    width: 100%; padding: 10px; background: #116913; border: none; border-radius: 5px;
+    color: #ffffff; font-weight: normal; cursor: pointer; transition: 0.3s;
+}
+
+.button{
+    width: 100%; padding: 10px; background: #116913; border: none; border-radius: 5px;
+    color: #ffffff; font-weight: normal; cursor: pointer; transition: 0.3s;
+}
+.btn:hover, .button:hover { 
+    background: #034704;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.error { color: red; font-size: 0.85rem; margin-bottom: 15px; }
+.links { margin-top: 15px; font-size: 0.85rem; }
+.links a { color: #ffffff; text-decoration: none; }
+
+p{color: white}

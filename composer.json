@@ -1,0 +1,6 @@
+{
+    "require": {
+        "algolia/algoliasearch-client-php": "3.4",
+        "phpmailer/phpmailer": "^7.0"
+    }
+}

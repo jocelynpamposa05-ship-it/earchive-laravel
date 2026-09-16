@@ -1,0 +1,158 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/cpsu_pic.jpg);
+    background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Hide the original sidebar panel to adopt the single-card layout */
+.sidebar {
+    display: none;
+}
+
+/* Make the main content area a full-width transparent container */
+.main-content {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    background: #0000006b;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-card img {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+.login-card h2 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.login-card h5 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.login-card p {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* --- Form Elements --- */
+label {
+    display: block;
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+    caret-color: black;
+}
+
+input[type="text"] {
+    margin-bottom: 20px;
+}
+
+input[type="password"] {
+    margin-bottom: 0px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #116913;
+}
+
+.invalid-input {
+    border: 2px solid #e63946 !important;
+    box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.15);
+    outline: none !important;
+}
+
+.invalid-message {
+    color: #e63946;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 6px;
+    display: block;
+}
+.invalid-input.invalid-shake {
+    animation: validateShake 0.3s ease-in-out;
+}
+@keyframes validateShake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+
+.btn-login, .btn-create {
+    background: #116913;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: normal;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #034704;
+}
+
+/* --- Secondary Actions --- */
+.btn-create {
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.btn-create:hover {
+    background: #034704;
+}
+
+.error-msg {
+    color: red;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 900px) {
+    /* The new design is responsive by default, so the old media query is not needed. */
+}

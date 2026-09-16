@@ -1,0 +1,411 @@
+/* Styles for viewingpdf.php */
+
+/* --- Security --- */
+/* This class is added by JavaScript to disable text selection */
+.secure-view {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE 10+ */
+    user-select: none;         /* Standard */
+}
+
+/* --- Enhanced Protection for Abstract, APA, Keywords --- */
+.protected-content {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default; /* Prevents text cursor from appearing */
+}
+
+/* Navbar logo width */
+.nav-logo {
+    width: 60px;
+}
+
+/* --- NEW: Profile Icon & Dropdown --- */
+.profile-container {
+    position: relative;
+}
+
+.user-profile-icon {
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+.user-profile-icon:hover {
+    color: #FFD700; /* Brighter Gold for hover */
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    width: 400px;
+    z-index: 1100;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    visibility: hidden;
+    transition: none;
+    color: #333; /* Reset text color for dropdown content */
+}
+
+.profile-dropdown.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.dropdown-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px 20px;
+    background: linear-gradient(to bottom, #fdfdfd, #ffffff);
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-header .avatar { 
+    font-size: 3.5rem; 
+    color: #116913; 
+    margin-bottom: 10px;
+    background: #e8f5e9;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.dropdown-header .user-info h4 { margin: 0; font-size: 1.1rem; color: #333; font-weight: 700; margin-bottom: 4px; }
+.dropdown-header .user-info p.email { margin: 0; font-size: 0.85rem; color: #777; }
+
+.dropdown-body { padding: 15px 25px; background: #fff; }
+
+.profile-info-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; font-size: 0.9rem; color: #555; }
+.profile-info-row:last-child { margin-bottom: 0; }
+.profile-info-row i { color: #116913; font-size: 1rem; width: 25px; }
+.profile-info-row span.value { 
+    font-weight: 600; 
+    color: #333; 
+    text-align: right; 
+    font-size: 0.9rem; 
+}
+
+.dropdown-menu { list-style: none; padding: 8px 0; margin: 0; }
+.dropdown-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #444;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+.dropdown-menu li a:hover { background-color: #f5f5f5; }
+.dropdown-menu li a i { width: 20px; text-align: center; color: #888; }
+
+/* Back button link */
+.protection-banner a {
+    text-decoration: none;
+}
+
+/* Main Layout */
+.main-wrapper {
+    display: flex;
+    height: calc(100vh - 130px);
+    background: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    gap: 0;
+}
+
+/* PDF Container */
+.pdf-container {
+    flex: 1;
+    background: white;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Sidebar Container */
+.sidebar {
+    width: 350px;
+    background: #edeff2;
+    padding: 20px;
+    overflow-y: auto;
+    border-left: 1px solid #edeff2;
+}
+
+/* Sidebar Card details */
+.sidebar-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-left: 5px solid #e5ff54;
+    border-radius: 0;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.sidebar-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #003300;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar-card h3 i {
+    color: #003300;
+}
+
+.sidebar-card .detail-item {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.sidebar-card .detail-title {
+    font-size: 0.9rem;
+}
+
+.sidebar-card .detail-author,
+.sidebar-card .detail-dept {
+    font-size: 0.85rem;
+}
+
+/* Abstract text */
+.abstract-text {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Quick Citation Styles */
+.citation-box {
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 0;
+    margin-bottom: 10px;
+}
+
+.apa-tag {
+    display: inline-block;
+    background: #003300;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    border-radius: 0;
+}
+
+.citation-text {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+}
+
+/* Keywords */
+.keywords-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.keyword-tag {
+    background: #eef5ee;
+    border: 1px solid #00421b;
+    color: #00421b;
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    border-radius: 0;
+}
+
+/* Powered by Algolia text */
+.powered-by {
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* AI Recommendations */
+#recommendations {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+#recommendations .ais-Hits {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#recommendations .ais-Hits-item {
+    background: #f8f8f8;
+    padding: 10px;
+    border-left: 3px solid #fffaee;
+    border-radius: 0;
+}
+
+#recommendations .ais-Hits-item h4 {
+    margin: 0 0 5px 0;
+    font-size: 0.9rem;
+    color: #003300;
+}
+
+#recommendations .ais-Hits-item p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Policy Box */
+.policy-box {
+    background: #fff9e6;
+    border: 2px solid #ffb700;
+    border-left: 5px solid #ffb700;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 0;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.policy-box strong {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #003300;
+    margin-bottom: 8px;
+}
+
+.policy-box i {
+    color: #ffb700;
+}
+
+.policy-box p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* PDF.js error message */
+.pdf-error {
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Algolia recommendation status messages */
+.recommendation-meta {
+    font-size: 0.8rem;
+    color: #777;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 300px;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #ddd;
+    }
+
+    .main-wrapper {
+        height: auto;
+    }
+}
+
+/* --- Print Protection --- */
+@media print {
+    .pdf-container, 
+    .protected-content,
+    .sidebar,
+    .protection-banner {
+        display: none !important;
+    }
+    body::after {
+        content: "Printing this document is restricted for security reasons.";
+        display: block;
+        text-align: center;
+        font-size: 1.5rem;
+        margin-top: 50px;
+        color: #b40917;
+    }
+}
+
+/* --- Skeleton Loader (Document Style) --- */
+.skeleton-page {
+    background: white;
+    width: 100%;
+    /* Approx dimensions of a page at 1.5 scale */
+    max-width: 900px; 
+    height: 1100px;
+    margin: 0 auto 20px auto;
+    padding: 50px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    animation: skeleton-pulse 1.5s infinite ease-in-out;
+    box-sizing: border-box;
+}
+
+.skeleton-line {
+    height: 15px;
+    background: #f0f0f0;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.skeleton-line.title {
+    height: 30px;
+    width: 60%;
+    margin-bottom: 40px;
+    background: #e0e0e0;
+}
+
+.skeleton-line.short {
+    width: 70%;
+}
+
+.skeleton-block {
+    height: 300px;
+    background: #f0f0f0;
+    margin: 30px 0;
+    border-radius: 4px;
+}
+
+@keyframes skeleton-pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}

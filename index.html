@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Earchive</title>
+  <!-- Viewport is required for mobile responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Link to the manifest -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- iOS support (Apple devices don't fully use the manifest for icons yet) -->
+  <link rel="apple-touch-icon" href="img/cpsu_logo.png">
+  <meta name="theme-color" content="#116913">
+</head>
+<body>
+  <div class="welcome-container">
+    <img src="img/cpsu_logo.png" alt="Earchive Logo" class="welcome-logo">
+    <h1>Welcome to Earchive</h1>
+    <p>Progressive Web App</p>
+    <a href="loginadmin.php" class="login-button">Start</a>
+    
+    <!-- Custom Install Button (Hidden by default) -->
+    <button id="installBtn" class="login-button" style="display: none; background-color: #ebe80f; color: #004d00; margin-top: 15px; border: none; cursor: pointer;">
+      <i class="fa-solid fa-download"></i> INSTALL APP
+    </button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
